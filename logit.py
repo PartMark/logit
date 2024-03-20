@@ -30,16 +30,15 @@ def saada_kiri():
         server.starttls(context=context)
         server.login(sender_email,password)
         server.send.message(msg)
-        print("Valmis!") 
-        # aruanne et kiri oli saadetud Messagebox()
+        messagebox.showinfo("Informatsioon","Kiri oli saadetud") 
     except Exception as e:
-        print(e)
+        messagebox.showerror("Tekkis viga!",e)
     finally:
         server.quit()
  
 
 aken=Tk()
-aken.geometry("400x300")
+aken.geometry("420x300")
 aken.title("E-kirja saatmine")
 aken.iconbitmap("mail.ico")
 l_mail=Label(aken,text="Email:",bg="#38761d",fg="#e7efe3",font="Castellar 16",height=1,width=8)
@@ -57,5 +56,4 @@ kiri_box.grid(row=1,column=1,columnspan=2)
 saada_btn.grid(row=2,column=2)
 pilt_btn.grid(row=2,column=1)
 aken.mainloop()
-
 
