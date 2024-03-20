@@ -29,7 +29,7 @@ def saada_kiri():
         server=smtplib.SMTP(smtp_server,port)
         server.starttls(context=context)
         server.login(sender_email,password)
-        server.send.message(msg)
+        server.send_message(msg)
         messagebox.showinfo("Informatsioon","Kiri oli saadetud") 
     except Exception as e:
         messagebox.showerror("Tekkis viga!",e)
